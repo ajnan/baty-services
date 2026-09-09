@@ -1,16 +1,56 @@
-# React + Vite
+# 🚛 Baty Services — WE REMOVE THE MESS!
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **Full-Service Debris & Junk Removal, Construction Site Cleanup, and Dirt, Gravel & Material Delivery across Texas.**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 🌐 Live Website & Demo
+### 👉 **[https://ajnan.github.io/baty-services/](https://ajnan.github.io/baty-services/)**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🌟 Key Features & Pages
 
-## Expanding the Oxlint configuration
+- **Home Page**: Exact pixel-accurate recreation of the reference design featuring the heavy commercial dump truck, trust indicators, core services grid, company story, 4-step process flow, before/after project showcase, client testimonials carousel, and lead capture quote form.
+- **Services (`/services`)**: In-depth specifications for Debris & Junk Removal, Construction Cleanup, Dirt/Gravel Delivery, and Residential/Commercial cleanouts, plus interactive "What We Take" vs "What We Don't Take" checklists.
+- **About Us (`/about`)**: Background, Texas roots, equipment fleet showcase, safety standards, and insurance COI coverage.
+- **Recent Projects (`/projects`)**: Real job transformations with **Interactive Before/After draggable comparison sliders** and category filters.
+- **FAQ (`/faq`)**: Interactive real-time search and categorized accordion.
+- **Contact & Estimator (`/contact`)**: **Interactive Ballpark Cost Estimator** calculating instant estimates based on property type, service, and volume.
+- **Quick Quote Modal**: Global modal accessible from any page.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **React 19** + **Vite**
+- **Tailwind CSS v4** + `@tailwindcss/vite`
+- **React Router** (`HashRouter` for 100% reliable GitHub Pages routing)
+- **Lucide Icons**
+- **Google Fonts**: *Bebas Neue*, *Caveat*, *Barlow Condensed*, and *Inter*
+
+---
+
+## 🚀 Local Development
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start development server
+npm run dev
+
+# 3. Build for production
+npm run build
+
+# 4. Preview production build locally
+npm run preview
+```
+
+---
+
+## 📞 Contact Information
+
+- **Phone**: [409-218-4240](tel:4092184240) (Call or Text)
+- **Email**: [batyservices@gmail.com](mailto:batyservices@gmail.com)
+- **Service Area**: Residential & Commercial across Texas
