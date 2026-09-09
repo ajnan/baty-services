@@ -95,10 +95,39 @@ export function ScriptSticker({
 export const StampBadge = ScriptSticker;
 
 export function TexasStateBadge({ className = "" }) {
+  // Inline the TexasMark SVG to avoid minification issues with self-referencing
+  // exports in the same module (Vite renames the var but JSX ref keeps original name)
+  const uid = Math.random().toString(36).slice(2);
+  const patternId = `leopard-sb-${uid}`;
   return (
     <div className={`relative flex items-center justify-center select-none ${className}`}>
       <div className="relative flex items-center gap-3 bg-black/70 backdrop-blur-md border border-[#f5c518]/40 rounded-xl p-3 shadow-2xl">
-        <TexasMark variant="leopard" className="w-16 h-14 shrink-0" />
+        <svg
+          viewBox="0 0 236 196"
+          className="w-16 h-14 shrink-0 overflow-visible select-none drop-shadow-[0_2px_8px_rgba(245,197,24,0.3)]"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <pattern id={patternId} patternUnits="userSpaceOnUse" width="26" height="26">
+              <rect width="26" height="26" fill="#d2ae6e" />
+              <ellipse cx="7" cy="8" rx="5" ry="3.8" fill="#2b1c0e" />
+              <ellipse cx="7" cy="8" rx="2" ry="1.4" fill="#d2ae6e" />
+              <ellipse cx="19" cy="5" rx="4.2" ry="3.2" fill="#2b1c0e" />
+              <ellipse cx="19" cy="5" rx="1.6" ry="1.1" fill="#d2ae6e" />
+              <ellipse cx="17" cy="18" rx="4.8" ry="3.6" fill="#2b1c0e" />
+              <ellipse cx="17" cy="18" rx="1.9" ry="1.3" fill="#d2ae6e" />
+              <ellipse cx="4" cy="20" rx="3.4" ry="2.6" fill="#2b1c0e" />
+              <ellipse cx="11" cy="1.5" rx="2.2" ry="1.6" fill="#2b1c0e" />
+            </pattern>
+          </defs>
+          <path
+            d="M80 6h72v52h76l-4 34-10 32-22 26-28 20-28 14-24 6-24-14-32-22-28-28-18-30-2-24 16-12 28-2H80z"
+            fill={`url(#${patternId})`}
+            stroke="#f5c518"
+            strokeWidth="3"
+          />
+        </svg>
         <div className="script text-right text-lg sm:text-xl leading-[1.05] text-white pr-1">
           Cleaner Texas
           <br />

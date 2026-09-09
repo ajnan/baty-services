@@ -87,16 +87,7 @@ export default function HomePage({ onOpenQuoteModal }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30" />
 
                 {/* Texas Mark & Script Badge overlay matching reference top right */}
-                <div className="absolute top-4 right-4 flex items-center gap-3 bg-black/60 backdrop-blur-md px-3.5 py-2 rounded-xl border border-[#f5c518]/40 shadow-xl">
-                  <TexasMark variant="leopard" className="w-12 h-10 shrink-0" />
-                  <div className="script text-right text-base sm:text-lg leading-[0.95] text-white">
-                    Cleaner Texas
-                    <br />
-                    Stronger
-                    <br />
-                    Tomorrow.
-                  </div>
-                </div>
+                <TexasStateBadge className="absolute top-4 right-4" />
               </div>
             </div>
           </div>
