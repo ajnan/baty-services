@@ -1,73 +1,110 @@
-import React from 'react';
+import React, { useId } from 'react';
+
+const TEXAS_PATH =
+  "M80 6h72v52h76l-4 34-10 32-22 26-28 20-28 14-24 6-24-14-32-22-28-28-18-30-2-24 16-12 28-2H80z";
 
 /**
- * StampBadge: "SAME MESS. A CLEANER TOMORROW."
- * Renders the angled, energetic contractor stamp badge seen in the reference image.
+ * Authentic Texas Silhouette with Leopard Rosette Pattern
  */
-export function StampBadge({ className = "", text1 = "SAME MESS.", text2 = "A CLEANER", text3 = "TOMORROW." }) {
+export function TexasMark({
+  className = "w-14 h-12",
+  variant = "leopard",
+}) {
+  const uid = useId().replace(/:/g, "");
+  const patternId = `leopard-${uid}`;
+
+  return (
+    <svg
+      viewBox="0 0 236 196"
+      className={`overflow-visible select-none drop-shadow-[0_2px_8px_rgba(245,197,24,0.3)] ${className}`}
+      aria-hidden="true"
+      focusable="false"
+    >
+      {variant === "leopard" ? (
+        <defs>
+          <pattern
+            id={patternId}
+            patternUnits="userSpaceOnUse"
+            width="26"
+            height="26"
+          >
+            <rect width="26" height="26" fill="#d2ae6e" />
+            <ellipse cx="7" cy="8" rx="5" ry="3.8" fill="#2b1c0e" />
+            <ellipse cx="7" cy="8" rx="2" ry="1.4" fill="#d2ae6e" />
+            <ellipse cx="19" cy="5" rx="4.2" ry="3.2" fill="#2b1c0e" />
+            <ellipse cx="19" cy="5" rx="1.6" ry="1.1" fill="#d2ae6e" />
+            <ellipse cx="17" cy="18" rx="4.8" ry="3.6" fill="#2b1c0e" />
+            <ellipse cx="17" cy="18" rx="1.9" ry="1.3" fill="#d2ae6e" />
+            <ellipse cx="4" cy="20" rx="3.4" ry="2.6" fill="#2b1c0e" />
+            <ellipse cx="11" cy="1.5" rx="2.2" ry="1.6" fill="#2b1c0e" />
+          </pattern>
+        </defs>
+      ) : null}
+      <path
+        d={TEXAS_PATH}
+        fill={
+          variant === "leopard"
+            ? `url(#${patternId})`
+            : variant === "gold"
+              ? "#f5c518"
+              : "currentColor"
+        }
+        stroke="#f5c518"
+        strokeWidth={variant === "leopard" ? "3" : "0"}
+      />
+    </svg>
+  );
+}
+
+/**
+ * Organic Brush Sticker: "Same mess. A cleaner tomorrow."
+ */
+export function ScriptSticker({
+  className = "",
+  lines = ["Same mess.", "A cleaner", "tomorrow."],
+  tone = "gold",
+}) {
   return (
     <div
-      className={`inline-block select-none transform -rotate-6 transition-transform hover:rotate-0 duration-300 ${className}`}
+      className={`relative inline-flex -rotate-6 sm:-rotate-8 items-center justify-center px-6 py-4 select-none hover:rotate-0 transition-transform duration-300 ${className}`}
     >
-      <div className="relative border-4 border-amber-500/80 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 px-4 py-2 rounded-md shadow-[0_4px_15px_rgba(245,158,11,0.4)] text-center leading-none">
-        {/* Subtle grunge overlay */}
-        <div className="absolute inset-0 opacity-15 mix-blend-overlay bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:6px_6px] pointer-events-none rounded" />
-        
-        <div className="font-heading font-black tracking-tighter text-black text-xs sm:text-sm uppercase drop-shadow-sm">
-          {text1}
-        </div>
-        <div className="font-stamp text-black text-sm sm:text-base font-extrabold tracking-wide uppercase mt-0.5">
-          {text2}
-        </div>
-        <div className="font-heading font-black tracking-tight text-black text-xs sm:text-sm uppercase">
-          {text3}
-        </div>
+      <svg
+        viewBox="0 0 280 140"
+        className="absolute inset-0 h-full w-full drop-shadow-md"
+        aria-hidden="true"
+      >
+        <path
+          d="M24 78 C18 40 62 12 118 22 C168 8 236 18 258 48 C274 72 248 112 186 122 C128 136 52 124 28 96 C18 88 22 82 24 78Z"
+          fill={tone === "gold" ? "#f5c518" : "#ffffff"}
+        />
+      </svg>
+      <div
+        className="script relative z-10 text-center text-2xl sm:text-3xl font-bold leading-[0.92] text-black tracking-wide"
+      >
+        {lines.map((line, idx) => (
+          <span key={idx} className="block">
+            {line}
+          </span>
+        ))}
       </div>
     </div>
   );
 }
 
-/**
- * TexasStateBadge: Texas silhouette with leopard/industrial camo and gold ring + "CLEANER TEXAS STRONGER TOMORROW."
- */
-export function TexasStateBadge({ className = "", size = 120 }) {
+// Aliases for compatibility
+export const StampBadge = ScriptSticker;
+
+export function TexasStateBadge({ className = "" }) {
   return (
     <div className={`relative flex items-center justify-center select-none ${className}`}>
-      <div className="relative flex items-center gap-2 bg-black/60 backdrop-blur-sm border border-amber-400/40 rounded-xl p-2.5 shadow-2xl">
-        {/* Texas Outline graphic */}
-        <div className="w-14 h-14 relative flex-shrink-0">
-          <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-[0_2px_10px_rgba(245,158,11,0.5)]">
-            <defs>
-              <pattern id="texasBadgePattern" patternUnits="userSpaceOnUse" width="16" height="16">
-                <rect width="16" height="16" fill="#78350f" />
-                <path d="M0 0h8v8H0z" fill="#92400e" />
-                <circle cx="4" cy="4" r="2.5" fill="#f59e0b" />
-                <circle cx="12" cy="12" r="3" fill="#d97706" />
-                <path d="M8 8l4-4 4 4-4 4z" fill="#b45309" />
-                <circle cx="12" cy="4" r="1.5" fill="#fef08a" />
-              </pattern>
-            </defs>
-            <path
-              d="M 18 10 L 42 10 L 42 28 L 72 28 L 68 46 L 82 52 L 90 70 L 86 82 L 74 92 L 52 90 L 44 82 L 36 86 L 26 78 L 18 52 L 26 42 L 18 36 Z"
-              fill="url(#texasBadgePattern)"
-              stroke="#fdb813"
-              strokeWidth="4"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-
-        {/* Badge Text */}
-        <div className="flex flex-col text-left leading-tight pr-1">
-          <span className="font-heading font-black text-xs text-[#fdb813] tracking-wider uppercase">
-            CLEANER TEXAS
-          </span>
-          <span className="font-heading font-black text-xs text-white tracking-wider uppercase">
-            STRONGER
-          </span>
-          <span className="font-heading font-black text-xs text-white tracking-wider uppercase">
-            TOMORROW.
-          </span>
+      <div className="relative flex items-center gap-3 bg-black/70 backdrop-blur-md border border-[#f5c518]/40 rounded-xl p-3 shadow-2xl">
+        <TexasMark variant="leopard" className="w-16 h-14 shrink-0" />
+        <div className="script text-right text-lg sm:text-xl leading-[1.05] text-white pr-1">
+          Cleaner Texas
+          <br />
+          Stronger
+          <br />
+          Tomorrow.
         </div>
       </div>
     </div>

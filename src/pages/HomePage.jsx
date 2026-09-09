@@ -78,17 +78,24 @@ export default function HomePage({ onOpenQuoteModal }) {
 
             {/* Right Hero Image Column: Commercial Dump Truck dumping debris */}
             <div className="lg:col-span-6 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-zinc-950">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-zinc-950 group">
                 <img
-                  src={asset('/images/hero-truck.jpg')}
+                  src={asset('/images/hero.jpg')}
                   alt="Baty Services Dump Truck clearing construction debris in Texas"
-                  className="w-full h-[360px] sm:h-[440px] object-cover object-center"
+                  className="w-full h-[380px] sm:h-[460px] object-cover object-[70%_center] group-hover:scale-102 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30" />
 
-                {/* Texas State Badge overlay matching reference top right */}
-                <div className="absolute top-4 right-4">
-                  <TexasStateBadge />
+                {/* Texas Mark & Script Badge overlay matching reference top right */}
+                <div className="absolute top-4 right-4 flex items-center gap-3 bg-black/60 backdrop-blur-md px-3.5 py-2 rounded-xl border border-[#f5c518]/40 shadow-xl">
+                  <TexasMark variant="leopard" className="w-12 h-10 shrink-0" />
+                  <div className="script text-right text-base sm:text-lg leading-[0.95] text-white">
+                    Cleaner Texas
+                    <br />
+                    Stronger
+                    <br />
+                    Tomorrow.
+                  </div>
                 </div>
               </div>
             </div>
@@ -238,10 +245,12 @@ export default function HomePage({ onOpenQuoteModal }) {
                   </div>
                 </div>
 
-                {/* Texas Badge Overlay bottom right */}
+                {/* Script Overlay bottom right */}
                 <div className="absolute bottom-4 right-4 hidden sm:block">
-                  <div className="font-heading font-black text-xs text-black bg-[#fdb813] px-3 py-1.5 rounded uppercase tracking-wider shadow">
-                    CLEANER TEXAS STRONGER TOMORROW.
+                  <div className="script text-right text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                    Cleaner Texas
+                    <br />
+                    Stronger Tomorrow.
                   </div>
                 </div>
               </div>

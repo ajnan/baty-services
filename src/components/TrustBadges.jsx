@@ -1,55 +1,43 @@
 import React from 'react';
-import { Zap, ShieldCheck, Users } from 'lucide-react';
+import { Leaf, Shield, Users } from 'lucide-react';
+import { TexasMark } from './TexasBadge';
 
 export default function TrustBadges() {
   const badges = [
     {
-      title: 'Fast & Reliable Service',
-      icon: (
-        <div className="w-7 h-7 flex-shrink-0 text-[#fdb813]">
-          <Zap className="w-full h-full fill-current" />
-        </div>
-      ),
+      label: 'Fast & Reliable',
+      sub: 'Service',
+      icon: <Leaf className="w-5 h-5 text-black stroke-[2.2]" />,
     },
     {
-      title: 'Affordable & Transparent Pricing',
-      icon: (
-        <div className="w-7 h-7 flex-shrink-0 text-[#fdb813]">
-          <ShieldCheck className="w-full h-full stroke-[2.5]" />
-        </div>
-      ),
+      label: 'Affordable &',
+      sub: 'Transparent Pricing',
+      icon: <Shield className="w-5 h-5 text-black stroke-[2.2]" />,
     },
     {
-      title: 'Residential & Commercial',
-      icon: (
-        <div className="w-7 h-7 flex-shrink-0 text-[#fdb813]">
-          <Users className="w-full h-full stroke-[2.5]" />
-        </div>
-      ),
+      label: 'Residential &',
+      sub: 'Commercial',
+      icon: <Users className="w-5 h-5 text-black stroke-[2.2]" />,
     },
     {
-      title: 'Proudly Serving Texas',
-      icon: (
-        <div className="w-7 h-7 flex-shrink-0 text-[#fdb813]">
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-current">
-            <path d="M 18 10 L 42 10 L 42 28 L 72 28 L 68 46 L 82 52 L 90 70 L 86 82 L 74 92 L 52 90 L 44 82 L 36 86 L 26 78 L 18 52 L 26 42 L 18 36 Z" />
-          </svg>
-        </div>
-      ),
+      label: 'Proudly Serving',
+      sub: 'Texas',
+      icon: <TexasMark variant="gold" className="w-5 h-5 text-black" />,
     },
   ];
 
   return (
-    <div className="border-t border-b border-zinc-800/80 bg-[#0d0f14] py-6 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
-        {badges.map((badge, idx) => (
-          <div
-            key={idx}
-            className="flex items-center gap-3.5 px-3 py-2 rounded-lg bg-zinc-900/40 border border-zinc-800/50 hover:border-[#fdb813]/40 transition-colors"
-          >
-            {badge.icon}
-            <span className="font-heading font-black text-base sm:text-lg text-white tracking-wide uppercase">
-              {badge.title}
+    <div className="border-t border-b border-zinc-800/80 bg-[#0e0e0e] py-5 px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+        {badges.map((item, idx) => (
+          <div key={idx} className="flex items-center gap-3.5">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#f5c518] shadow-md">
+              {item.icon}
+            </span>
+            <span className="text-xs sm:text-sm font-bold text-white leading-tight">
+              {item.label}
+              <br />
+              <span className="text-zinc-400 font-normal">{item.sub}</span>
             </span>
           </div>
         ))}

@@ -42,7 +42,7 @@ export const coreServices = [
     title: 'DIRT, GRAVEL & MATERIAL DELIVERY',
     subtitle: 'Aggregate & Fill Sourcing Direct to Site',
     icon: 'gravel',
-    image: asset('/images/service-gravel.jpg'),
+    image: asset('/images/service-dirt.jpg'),
     description: 'We deliver dirt, gravel and other materials to keep your project moving forward.',
     longDescription: 'Need aggregate for a new driveway, commercial pad, drainage fix, or landscaping grading? We haul and tailgate-spread premium crushed limestone, bank sand, topsoil, river rock, and road base right to your residential or commercial site.',
     features: [
