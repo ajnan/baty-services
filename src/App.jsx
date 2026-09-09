@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import QuoteModal from './components/QuoteModal';
+import ErrorBoundary from './components/ErrorBoundary';
 
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
@@ -34,7 +35,8 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <ErrorBoundary>
+      <Router>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-[#0a0c10] text-slate-100 font-sans selection:bg-[#fdb813] selection:text-black">
         {/* Global Navigation Bar */}
@@ -85,5 +87,6 @@ export default function App() {
         />
       </div>
     </Router>
+    </ErrorBoundary>
   );
 }
